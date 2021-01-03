@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+
+<head>
+  <title>Investor Code VIP</title>
+  <style>
+    .centerScreen {
+      margin-top: 20;
+      margin-right: auto;
+      margin-bottom: 20;
+      margin-left: auto;
+    }
+  </style>
+</head>
+
+<body style="background-color: rgb(255, 255, 255);">
+  <div class="centerScreen">
+    <center>
+      <img src="https://i.ibb.co/sb1TYmg/Profile-Page-2021.png" height="200px" , width="200px" />
+      <h1>
+        กำลังเข้าสู่ระบบสมาชิก Investor Code VIP
+      </h1>
+    </center>
+  </div>
+</body>
+<footer>
+  <script src="https://static.line-scdn.net/liff/edge/2.1/sdk.js"></script>
+  <script>
+    /// Config Your LIFF ID Here
+    const liffId = "1655379755-PKGY9yvB";
+    /// Config Your LIFF ID Here
+    liff.ready
+      .then(() => {
+        if (liff.isLoggedIn()) {
+          return liff.getProfile();
+        } else {
+          liff.login({
+            redirectUri: "https://criixalis.github.io/Registor/",
+          });
+        }
+      })
+      .then((profile) => {
+        window.location.replace(
+          `https://docs.google.com/forms/d/e/1FAIpQLScCXaUMfIQ1RKl5IW0jCYcEZSWIsTGi8gGFqkzX2MJ2L6_sSQ/viewform?usp=pp_url
+         &entry.1223295606=${profile.userId}
+         &entry.2100067262=${profile.displayName}
+         &entry.705853642=${profile.pictureUrl}`
+        );
+      });
+    liff.init(
+      {
+        liffId: liffId,
+      },
+      () => {},
+      (err) => {
+        window.alert(err);
+      }
+    );
+  </script>
+</footer>
